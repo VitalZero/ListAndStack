@@ -6,7 +6,7 @@
 
 int main()
 {
-  
+
   {
     LinkedList list;
 
@@ -55,29 +55,30 @@ int main()
 
   std::cout << std::endl;
 
+    LinkedList list1;
   {
     auto start = std::chrono::steady_clock::now();
 
-    LinkedList list;
 
-    for(int i = 0; i < 10000; ++i)
+    for(int i = 0; i < 1000000; ++i)
     {
-      list.Append(i);
+      list1.Append(i);
     }
 
     auto end = std::chrono::steady_clock::now();
     std::chrono::duration<float> elapsed;
     elapsed = end - start;
 
-    std::cout << "list time 10000 appends: " << elapsed.count() << " seconds"<< std::endl;
+    std::cout << "list time 1'000,000 appends: " << elapsed.count() << " seconds"<< std::endl;
+
   }
 
+    LinkedList list;
   {
     auto start = std::chrono::steady_clock::now();
 
-    LinkedList list;
 
-    for(int i = 0; i < 10000; ++i)
+    for(int i = 0; i < 1000000; ++i)
     {
       list.Insert(i);
     }
@@ -86,15 +87,15 @@ int main()
     std::chrono::duration<float> elapsed;
     elapsed = end - start;
 
-    std::cout << "list time 10000 inserts: " << elapsed.count() << " seconds"<< std::endl;
+    std::cout << "list time 1'000,000 inserts: " << elapsed.count() << " seconds"<< std::endl;
   }
 
+    Stack stack;
   {
     auto start = std::chrono::steady_clock::now();
 
-    Stack stack;
 
-    for(int i = 0; i < 10000; ++i)
+    for(int i = 0; i < 1000000; ++i)
     {
       stack.Push(i);
     }
@@ -103,7 +104,7 @@ int main()
     std::chrono::duration<float> elapsed;
     elapsed = end - start;
 
-    std::cout << "stack time 10000 pushes: " << elapsed.count() << " seconds" << std::endl;
+    std::cout << "stack time 1'000,000 pushes: " << elapsed.count() << " seconds" << std::endl;
   }
 
   return 0;

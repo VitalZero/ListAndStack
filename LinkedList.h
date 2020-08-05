@@ -44,19 +44,21 @@ public:
 
     if(!head)
     {
-      head = node;
+      tail = node;
+      head = tail;
     }
     else
     {
-      Node* itr;
-      itr = head;
+      // Node* itr;
+      // itr = head;
 
-      while(itr->next)
-      {
-        itr = itr->next;
-      }
+      // while(itr->next)
+      // {
+      //   itr = itr->next;
+      // }
 
-      itr->next = node;
+      tail->next = node;
+      tail = node;
     }
   }
   void Insert(int data)
@@ -77,4 +79,5 @@ public:
 
 private:
   Node* head = nullptr;
+  Node* tail = nullptr;
 };
