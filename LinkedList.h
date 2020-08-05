@@ -49,17 +49,11 @@ public:
     }
     else
     {
-      // Node* itr;
-      // itr = head;
-
-      // while(itr->next)
-      // {
-      //   itr = itr->next;
-      // }
-
       tail->next = node;
       tail = node;
     }
+
+    size++;
   }
   void Insert(int data)
   {
@@ -75,9 +69,33 @@ public:
       node->next = head;
       head = node;
     }
+
+    size++;
+  }
+  void Delete(int data)
+  {
+    Node* itr = head;
+    Node* prev = nullptr;
+
+    while(itr->next)
+    {
+      if(itr->data == data)
+      {
+        prev->next = itr->next;
+
+        itr->next = nullptr;
+        delete itr;
+
+        size--;
+        break;
+      }
+      prev = itr;
+      itr = itr->next;
+    }
   }
 
 private:
   Node* head = nullptr;
   Node* tail = nullptr;
+  int size = 0;
 };
