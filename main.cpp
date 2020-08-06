@@ -1,3 +1,5 @@
+#define _CRTDBG_MAP_ALLOC
+#include <crtdbg.h>
 #include <iostream>
 #include <chrono>
 
@@ -110,5 +112,6 @@ int main()
   //   std::cout << "stack time 1'000,000 pushes: " << elapsed.count() << " seconds" << std::endl;
   // }
 
+  _CrtDumpMemoryLeaks();
   return 0;
 }

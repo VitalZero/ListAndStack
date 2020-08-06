@@ -8,6 +8,7 @@
       "args": [
         "/Zi",
         "/EHsc",
+        "/MDd",
         "/Fe:",
         "${fileDirname}\\main.exe",
         "*.cpp"
